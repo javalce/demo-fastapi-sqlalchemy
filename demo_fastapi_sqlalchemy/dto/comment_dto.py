@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb 01 2023
+Created on Mon Feb 06 2023
 
 @author: javalce
 """
 
-from typing import List
-
 from pydantic import BaseModel, Field
 
 
-class AddressDTO(BaseModel):
-    id: int
-    email_address: str = Field(alias="email")
-    user_id: int = Field(alias="userId")
+class CommentDTO(BaseModel):
+    id: int | None = Field(default=None)
+    name: str
+    email: str
+    body: str
+    id_post: int
 
     class Config:
         orm_mode = True

@@ -6,5 +6,5 @@ Created on Wed Feb 01 2023
 @author: javalce
 """
 
-from .address import Address
-from .user import User
+from .comment import Comment
+from .post import Post

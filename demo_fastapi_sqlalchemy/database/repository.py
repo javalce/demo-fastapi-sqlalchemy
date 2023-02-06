@@ -12,7 +12,8 @@ from typing import Generic, List, Optional, Type, TypeVar
 from sqlalchemy import inspect, select
 from sqlalchemy.orm import Session
 
-from . import Base, db
+from .base import Base
+from .session import db
 
 T = TypeVar("T", bound=Base)
 K = TypeVar("K")
@@ -27,8 +28,8 @@ class CRUDRepository(Generic[T, K]):
         return db.session
 
     def find_all(self) -> List[T]:
-        stm = select(self.model)
-        return self.session.scalars(stm).all()
+        query = select(self.model)
+        return self.session.scalars(query).all()
 
     def find_by_id(self, id: K) -> Optional[T]:
         return self.session.get(self.model, id)

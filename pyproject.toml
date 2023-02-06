@@ -2,7 +2,7 @@
 name = "demo-fastapi-sqlalchemy"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Javier Valero Cejudo <javalce29@gmail.com>"]
 readme = "README.md"
 packages = [{include = "demo_fastapi_sqlalchemy"}]
 

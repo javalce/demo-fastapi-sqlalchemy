@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb 01 2023
+Created on Mon Feb 06 2023
 
 @author: javalce
 """
 
-
 from ..database import CRUDRepository
-from ..model import Address
+from ..model.post import Post
 
 
-class AddressRepository(CRUDRepository[Address, int]):
+class PostRepository(CRUDRepository[Post, int]):
     def __init__(self) -> None:
-        super().__init__(Address)
+        super().__init__(Post)
