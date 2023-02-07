@@ -20,7 +20,9 @@ if TYPE_CHECKING:
 class Post(Base):
     __tablename__ = "posts"
 
-    id: Mapped[int] = mapped_column("id_post", primary_key=True, autoincrement=True)
+    id: Mapped[int | None] = mapped_column(
+        "id_post", primary_key=True, autoincrement=True
+    )
     title: Mapped[str] = mapped_column("title", String(255))
     body: Mapped[str] = mapped_column("body", Text)
 

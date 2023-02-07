@@ -8,10 +8,8 @@ Created on Mon Feb 06 2023
 from fastapi import APIRouter, Depends, status
 
 from ..dto.comment_dto import CommentDTO
-from ..dto.post_dto import PostDTO
 from ..model.comment import Comment
 from ..service.comment_service import CommentService
-from ..service.post_service import PostService
 
 router = APIRouter(prefix="/comments", tags=["comments"])
 

@@ -20,7 +20,9 @@ if TYPE_CHECKING:
 class Comment(Base):
     __tablename__ = "comments"
 
-    id: Mapped[int] = mapped_column("id_comment", primary_key=True, autoincrement=True)
+    id: Mapped[int | None] = mapped_column(
+        "id_comment", primary_key=True, autoincrement=True
+    )
     name: Mapped[str] = mapped_column("name", String(255))
     email: Mapped[str] = mapped_column("email", String(255), unique=True)
     body: Mapped[str] = mapped_column("body", Text)

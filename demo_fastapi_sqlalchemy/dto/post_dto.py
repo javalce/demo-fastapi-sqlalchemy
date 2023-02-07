@@ -15,7 +15,7 @@ class PostDTO(BaseModel):
     id: int | None = Field(default=None)
     title: str
     body: str
-    comments: list[CommentDTO]
+    comments: list[CommentDTO] = Field(default_factory=list)
 
     class Config:
         orm_mode = True

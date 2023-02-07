@@ -6,7 +6,6 @@ Created on Mon Feb 06 2023
 @author: javalce
 """
 
-
 from fastapi import Depends
 
 from ..exception.post_exception import PostException
@@ -30,6 +29,11 @@ class PostService:
         return post
 
     def create(self, post: Post) -> Post:
+        if post.id is not None:
+            exists = self.repository.exists_by_id(post.id)
+            if exists:
+                raise PostException.resource_already_exists(post.id)
+
         return self.repository.save(post)
 
     def update(self, id: int, post: Post) -> Post:

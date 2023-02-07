@@ -32,6 +32,11 @@ class CommentService:
         return self.repository.find_by_id_post(id_post)
 
     def create(self, comment: Comment) -> Comment:
+        if comment.id is not None:
+            exists = self.repository.exists_by_id(comment.id)
+            if exists:
+                raise CommentException.resource_already_exists(comment.id)
+
         return self.repository.save(comment)
 
     def update(self, id: int, comment: Comment) -> Comment:
