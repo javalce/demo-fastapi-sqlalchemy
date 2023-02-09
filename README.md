@@ -1,3 +1,3 @@
 # DEMO FASTAPI + SQLALCHEMY
 
-An API REST demo using FastAPI and SQLAlchemy
+A simple API REST demo using FastAPI and SQLAlchemy to manage posts and comments.
